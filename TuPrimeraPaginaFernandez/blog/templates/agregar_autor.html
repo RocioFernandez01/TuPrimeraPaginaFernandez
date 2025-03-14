@@ -1,0 +1,19 @@
+<!-- blog/templates/blog/agregar_autor.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Autor</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon"> 
+</head>
+<body>
+    <h1>Agregar Autor</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Aquí se renderiza el formulario como párrafos -->
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

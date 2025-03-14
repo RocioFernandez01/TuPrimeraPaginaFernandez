@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Mi Blog{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">Acerca de mí</a></li>
+                    <li><a href="/pages/">Páginas</a></li>
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/signup/">Registro</a></li>
+                    <li><a href="/logout/">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    
+        <footer>
+            <p>&copy; 2025 Mi Blog</p>
+        </footer>
+    </body>
+    </html>
+    
+    <li><a href="{% url 'buscar_post' %}">Buscar</a></li>
+
+    <li><a href="{% url 'about' %}">Acerca de</a></li>

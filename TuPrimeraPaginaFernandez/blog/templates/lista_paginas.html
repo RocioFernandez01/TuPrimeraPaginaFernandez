@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Lista de Páginas</h2>
+    {% if paginas %}
+        <ul>
+            {% for pagina in paginas %}
+                <li>
+                    <h3>{{ pagina.titulo }}</h3>
+                    <p>{{ pagina.descripcion|truncatechars:100 }}</p>
+                    <a href="{% url 'detalle_pagina' pagina.id %}">Leer más</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay páginas aún.</p>
+    {% endif %}
+{% endblock %}
